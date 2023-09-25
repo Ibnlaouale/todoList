@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>To do List</title>
+</head>
+
+<body>
+    <div class="borderColor container rounded-3">
+        <div class="borderColor row rounded-2">
+            <!-- formulaire  -->
+            <div class="col-4 borderColor p-0">
+                
+                 <div class="container p-0">
+                        <div id="divtitreTache" class="titre text-white fw-bold text-center m-0 p-0">
+                            <h3 class="fs-2">Ajouter une tâtche</h3>
+                        </div>
+                  
+                        <select id="categorie" class="form-select  mt-4 borderColor noShadow">
+                            <option disabled selected>Categorie</option>
+                            <option value="Academique">Academique</option>
+                            <option value="Extra-academique">Extra-academique</option>
+                            <option value="Distraction">Distraction</option>
+                        </select>
+                        <input id="inputTitle" type="text" class="form-control  noShadow my-4 borderColor" placeholder="Titre" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="inputDate"  type="date" class="form-control  noShadow my-4 borderColor" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                        <textarea id="inputTextarea" class="form-control noShadow  my-4 borderColor" placeholder="Description"  style="height: 100px"></textarea>
+                        <select id="statut" class="form-select borderColor my-4 noShadow">
+                            <option disabled selected value="">Statut</option>
+                            <option value="Nouveau">Nouveau</option>
+                            <option value="En-cours">En-cours</option>
+                            <option value="Terminé">Terminé</option>
+                        </select>
+                
+                   
+                    <div class="d-grid w-75 mx-auto">
+                        <button id="btnAjout" class="btn btn-primary borderColor background fs-4 fw-bold" type="button">Ajouter</button>
+                    </div>
+    
+                        <div class="borderColor mt-3">
+                            <h2 class="text-center titleColor">statut</h2>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        <!-- lien chart js ------------>
+                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <!-- -------------------------->
+                </div>
+             </div>
+            <div class="col-8 position-relative p-0">
+
+                <!-- section liste des taches  -->
+                <div class="container">
+                    <!----------- notification --------- -->
+                <div id="notification" class="borderColor position-absolute top-0 end-0 rounded-2 fw-bold mt-5 hidden">
+                    <h3 class="background text-white text-center rounded-top-1">Ajout de la tâche</h3>
+                    <p class="text-center">L'enregistrement s'est effectué avec succès</p>
+                </div>
+                        <h4 class="titleColor text-center mt-5">Liste des tâches</h4>
+                    
+                    <!-- tableau des taches -->
+                   <div id="divTableTache" class="table-responsive overflow-y-scroll">
+                    <table class="borderColor table table-success table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Titre</th>
+                                <th scope="col">Catégorie</th>
+                                <th scope="col">Opérations</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyTache">
+                            <!-- <tr>
+                                <th scope="row">1</th>
+                                <td>2023-8-16</td>
+                                <td>Projet Test</td>
+                                <td>Académique</td>
+                                <td>
+                                    <i class="btn btn-info bi bi-eye text-white btnView"></i>
+                                    <i class="btn btn-success bi bi-pencil-square btnEdit"></i>
+                                    <i class="btn btn-danger bi bi-trash text-white btnDelete"></i>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                   </div>
+                </div>
+
+                <!-- tache information  -->
+                <div id="infoTache" class="z-3 position-absolute borderColor w-50  rounded-3 ms-5 bg-white hidden ">
+                    <h3 class="background rounded-top text-center text-white">Information tâche</h3>
+                    <!-- tableau des informations-->
+                    <div class="table-responsive">
+                        <table id="tableInfo">
+                            <tbody id="tbodyInfo">
+                                <tr>
+                                    <td class="titleColor fw-bold">Date :</td>
+                                    <td>2023-8-16</td>
+                                </tr>
+                                <tr>
+                                    <td class="titleColor fw-bold">Tite :</td>
+                                    <td>budgetAp</td>
+                                </tr>
+                                <tr>
+                                    <td class="titleColor fw-bold">Categorie :</td>
+                                    <td>Academique</td>
+                                </tr>
+                                <tr>
+                                    <td class="titleColor fw-bold">Description :</td>
+                                    <td>Lorem ipsum dolor</td>
+                                </tr>
+                                <tr>
+                                    <td class="titleColor fw-bold">Statut :</td>
+                                    <td>terminé</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Discription  -->
+                
+                    <div class="h-25 w-100 borderColor rounded-2  position-absolute bottom-0">
+                        <h3 class="text-center titleColor">Description</h3>
+                    <hr>
+                        <p id="paraDescription" class="mt-3"></p>
+                    </div>
+              
+                        
+                
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"
+        integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

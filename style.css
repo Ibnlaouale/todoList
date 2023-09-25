@@ -1,0 +1,57 @@
+body{
+    background-color: #e4e9ea !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh !important;
+}
+.borderColor{
+    border: 1px solid #6aa7aa !important;  
+}
+.titleColor{
+    color: #6aa7aa !important; 
+}
+.titre{
+    background-color:  #6aa7aa !important;
+    height: 20% !important;
+}
+#divtitreTache{
+    height: 3rem !important;
+}
+
+.background{
+background-color: #6aa7aa !important;
+}
+#bouttonAjout:hover{
+    background-color: #23696d !important;
+}
+
+.noShadow{
+    box-shadow: none !important;
+}
+thead th {
+    background-color: #23696d !important;
+    color: white !important;
+    font-size: medium !important;
+}
+.hidden{
+    display: none !important;
+}
+#notification{
+    background-color: #e4e9ea !important;
+    height: 10% !important;
+    width: 40% !important;
+}
+#divTableTache{
+    /* border: 2px solid red !important;  */
+    height: 35rem !important;
+}
+#infoTache{
+    margin-top: -20rem;
+    height: fit-content !important;
+}
+
+.updateColor{
+    background-color: #00ffcc !important ;
+}
+.isPointer { cursor: pointer; }
