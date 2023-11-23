@@ -76,4 +76,7 @@ thead th {
         margin-left: auto !important;
         margin-right: auto !important;
     }
+    body{
+        padding: 5% !important;
+    }
 }
