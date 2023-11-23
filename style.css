@@ -3,7 +3,7 @@ body {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    height: 100vh !important;
+    min-height: 100vh !important;
 }
 
 .borderColor {
@@ -68,4 +68,12 @@ thead th {
 .isPointer {
     cursor: pointer;
     
+}
+
+@media screen and (max-width: 425px) {
+    #infoTache{
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 }
