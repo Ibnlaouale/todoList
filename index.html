@@ -13,9 +13,9 @@
 
 <body>
     <div class="borderColor container rounded-3">
-        <div class="borderColor row rounded-2">
+        <div class="borderColor row rounded-3 overflow-hidden">
             <!-- formulaire  -->
-            <div class="col-4 borderColor p-0">
+            <div class="col-12 col-sm-4 col-md-4 borderColor p-0">
                 
                  <div class="container p-0">
                         <div id="divtitreTache" class="titre text-white fw-bold text-center m-0 p-0">
@@ -41,18 +41,17 @@
                    
                     <div class="d-grid w-75 mx-auto">
                         <button id="btnAjout" class="btn btn-primary borderColor background fs-4 fw-bold" type="button">Ajouter</button>
+                        <button id="btnUpdate" class="btn btn-primary borderColor background fs-4 fw-bold d-none updateColor" type="button">Mise à jour</button>
                     </div>
     
                         <div class="borderColor mt-3">
                             <h2 class="text-center titleColor">statut</h2>
                             <canvas id="myChart"></canvas>
                         </div>
-                        <!-- lien chart js ------------>
-                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                        <!-- -------------------------->
+                        
                 </div>
-             </div>
-            <div class="col-8 position-relative p-0">
+            </div>
+            <div class="col-12 col-sm-8 col-md-8 position-relative p-0">
 
                 <!-- section liste des taches  -->
                 <div class="container">
@@ -128,7 +127,7 @@
                     <div class="h-25 w-100 borderColor rounded-2  position-absolute bottom-0">
                         <h3 class="text-center titleColor">Description</h3>
                     <hr>
-                        <p id="paraDescription" class="mt-3"></p>
+                        <p id="taskDescription" class="mt-3 text-center"></p>
                     </div>
               
                         
@@ -138,9 +137,9 @@
     </div>
 
     <script type="module" src="index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"
-        integrity="sha512-7U4rRB8aGAHGVad3u2jiC7GA5/1YhQcQjxKeaVms/bT66i3LVBMRcBI9KwABNWnxOSwulkuSXxZLGuyfvo7V1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- lien chart js ------------>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- -------------------------->
 </body>
 
 </html>
