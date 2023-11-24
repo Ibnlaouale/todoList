@@ -81,6 +81,9 @@ btnAjout.addEventListener('click', () => {
     updateLocalStorage();
     showTableItems();
     vider();
+    setTimeout(() => {
+        location.reload();
+    }, 3000);
 });
 
 
@@ -295,7 +298,11 @@ btnUpdate.addEventListener('click', () => {
     setTimeout(() => {
         notification.classList.add('hidden');
     }, 2000);
-    console.log('tache modifiée ', tableList[indexToEdt]);
+    // console.log('tache modifiée ', tableList[indexToEdt]);
+
+    setTimeout(() => {
+        location.reload();
+    }, 3000);
 
 })
 
